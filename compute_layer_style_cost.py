@@ -10,6 +10,6 @@ def compute_layer_style_cost(a_S, a_G):
     GS = gram_matrix(a_S_unrolled)
     GG = gram_matrix(a_G_unrolled)
 
-    J_style_layer = tf.reduce_sum((tf.square(tf.subtract(GS, GG)))) / (4 * np.square(n_C) * np.square(n_H * n_W))
+    J_style_layer = tf.reduce_sum(tf.square(tf.subtract(GS, GG)))
 
     return J_style_layer
